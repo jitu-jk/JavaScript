@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local & global variable</title>
+</head>
+
+<body>
+    <script>
+
+        let globalvariable = 'i am global variable' + '<br>';
+
+        function myfunction() {
+
+            let localvariable = 'i am local variable' + '<br>';
+            document.write(localvariable);  //it can be access
+            document.write(globalvariable); //it can be access
+        }
+
+        myfunction();
+        document.write(globalvariable);  // also access
+
+        document.write(localvariable); // not access due to out of 
+
+
+
+    </script>
+</body>
+
+</html>
