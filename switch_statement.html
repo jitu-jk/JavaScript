@@ -11,11 +11,12 @@
     <script>
 
         let grade = 'B';
-        var result;
-        switch (grade) {
+        let result;
+        switch (grade) //switch statement compares the value of grade to various case values inside the switch.
+        {
             case 'A':
                 result = "A grade";
-                break;
+                break;       // break statement stop the execution when one case is executed
 
             case 'B':
                 result = "B grade";
@@ -26,7 +27,7 @@
             case 'D':
                 result = "D grade";
                 break;
-            default:
+            default:                    // when the non of case value is matched to case value than default execute
                 result = "no grade";
 
         }
