@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Argument</title>
+    <script>
+        function getcub(number) {
+            alert(number * number * number);
+        }
+
+        function getInputValue() {
+            var number = document.getElementById("userInput").value;
+            getcub(number); // Pass the user input as an argument to the getcub function
+        }
+    </script>
+</head>
+<body>
+    <input type="number" id="userInput" placeholder="Enter a number">
+    <input type="button" onclick="getInputValue()" value="Calculate Cube">
+</body>
+</html>
