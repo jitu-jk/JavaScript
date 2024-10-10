@@ -1,3 +1,3 @@
-console.log("helloworld");
+console.log("helloworld"); // console
 
-document.write("hello");
+document.write("hello"); // browser
