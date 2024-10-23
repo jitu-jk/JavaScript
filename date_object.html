@@ -15,6 +15,51 @@ let specificDate = new Date("2024-10-22");
 document.write(specificDate); 
 // Output: "2024-10-22T00:00:00.000Z"
 
+let currentDate1 = new Date();
+
+document.write("Current Date and Time: " + currentDate + "<br><br>");
+
+// 1. `getFullYear()` - Get the full year (e.g., 2024)
+document.write("Year: " + currentDate.getFullYear() + "<br>");
+
+// 2. `getMonth()` - Get the month (0-11). Note: January is 0, so add 1 to get a human-readable month.
+document.write("Month: " + (currentDate.getMonth() + 1) + "<br>");
+
+// 3. `getDate()` - Get the day of the month (1-31)
+document.write("Day of the Month: " + currentDate.getDate() + "<br>");
+
+// 4. `getDay()` - Get the day of the week (0-6). Sunday is 0, Saturday is 6.
+document.write("Day of the Week: " + currentDate.getDay() + "<br>");
+
+// 5. `getHours()` - Get the current hour (0-23)
+document.write("Hours: " + currentDate.getHours() + "<br>");
+
+// 6. `getMinutes()` - Get the current minutes (0-59)
+document.write("Minutes: " + currentDate.getMinutes() + "<br>");
+
+// 7. `getSeconds()` - Get the current seconds (0-59)
+document.write("Seconds: " + currentDate.getSeconds() + "<br>");
+
+// 8. `getMilliseconds()` - Get the current milliseconds (0-999)
+document.write("Milliseconds: " + currentDate.getMilliseconds() + "<br>");
+
+// 9. `getTime()` - Get the time in milliseconds since January 1, 1970
+document.write("Time since 1970 in ms: " + currentDate.getTime() + "<br>");
+
+// 10. `toISOString()` - Get the date in ISO format
+document.write("ISO Format: " + currentDate.toISOString() + "<br>");
+
+// 11. `toLocaleDateString()` - Get the date in a localized format
+document.write("Localized Date: " + currentDate.toLocaleDateString() + "<br>");
+
+// 12. `toLocaleTimeString()` - Get the time in a localized format
+document.write("Localized Time: " + currentDate.toLocaleTimeString() + "<br>");
+
+// 13. `toUTCString()` - Get the UTC date and time
+document.write("UTC Format: " + currentDate.toUTCString() + "<br>");
+
+
+
 
 
 </script>
