@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History Object Example</title>
+</head>
+<body>
+    <h1>History API Example</h1>
+    <button onclick="goBack()">Go Back</button>
+    <button onclick="goForward()">Go Forward</button>
+    <button onclick="goTwoStepsBack()">Go Back 2</button>
+    <button onclick="goTwoStepsForward()">Go Forward 2</button>
+    <button onclick="pushNewState()">Push New State</button>
+    <button onclick="replaceCurrentState()">Replace Current State</button>
+
+    <script>
+        // Move back by one entry in the history stack
+        function goBack() {
+            history.back();
+        }
+
+        // Move forward by one entry in the history stack
+        function goForward() {
+            history.forward();
+        }
+
+        // Move back by two entries in the history stack
+        function goTwoStepsBack() {
+            history.go(-2);
+        }
+
+        // Move forward by two entries in the history stack
+        function goTwoStepsForward() {
+            history.go(2);
+        }
+
+        // Push a new state to the history stack with a custom URL and state object
+        function pushNewState() {
+            history.pushState({ page: 1 }, "Page 1", "?page=1");
+            alert("New state pushed to history with URL ?page=1!");
+        }
+
+        // Replace the current state in the history stack with a new URL and state object
+        function replaceCurrentState() {
+            history.replaceState({ page: 2 }, "Page 2", "?page=2");
+            alert("Current state replaced in history with URL ?page=2!");
+        }
+
+        // Listen to changes in the history state
+        window.onpopstate = function(event) {
+            alert(`Location: ${document.location}, State: ${JSON.stringify(event.state)}`);
+        };
+    </script>
+</body>
+</html>
