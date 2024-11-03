@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History Object Example</title>
+</head>
+<body>
+    <h1>History API Example</h1>
+    <button onclick="goBack()">Go Back</button>
+    <button onclick="goForward()">Go Forward</button>
+    <button onclick="goTwoStepsBack()">Go Back 2</button>
+    <button onclick="goTwoStepsForward()">Go Forward 2</button>
+    <button onclick="pushNewState()">Push New State</button>
+    <button onclick="replaceCurrentState()">Replace Current State</button>
+
+    <!-- Display area for current state and URL -->
+    <div id="output">
+        <p><strong>Current URL:</strong> <span id="currentURL">-</span></p>
+        <p><strong>Current State:</strong> <span id="currentState">None</span></p>
+    </div>
+
+    <script>
+        // Update display area with current state and URL
+        function updateDisplay() {
+            document.getElementById("currentURL").textContent = window.location.href;
+            document.getElementById("currentState").textContent = JSON.stringify(history.state);
+        }
+
+        // Move back by one entry in the history stack
+        function goBack() {
+            history.back();
+            updateDisplay();
+        }
+
+        // Move forward by one entry in the history stack
+        function goForward() {
+            history.forward();
+            updateDisplay();
+        }
+
+        // Move back by two entries in the history stack
+        function goTwoStepsBack() {
+            history.go(-2);
+            updateDisplay();
+        }
+
+        // Move forward by two entries in the history stack
+        function goTwoStepsForward() {
+            history.go(2);
+            updateDisplay();
+        }
+
+        // Push a new state to the history stack with a custom URL and state object
+        function pushNewState() {
+            const pageNum = Math.floor(Math.random() * 100); // Random page number
+            const newState = { page: pageNum };
+            const newUrl = `?page=${pageNum}`;
+            history.pushState(newState, `Page ${pageNum}`, newUrl);
+            alert(`New state pushed to history with URL ${newUrl}`);
+            updateDisplay();
+        }
+
+        // Replace the current state in the history stack with a new URL and state object
+        function replaceCurrentState() {
+            const pageNum = Math.floor(Math.random() * 100);
+            const newState = { page: pageNum };
+            const newUrl = `?page=${pageNum}`;
+            history.replaceState(newState, `Page ${pageNum}`, newUrl);
+            alert(`Current state replaced in history with URL ${newUrl}`);
+            updateDisplay();
+        }
+
+        // Listen to changes in the history state and update display
+        window.onpopstate = function(event) {
+            updateDisplay();
+            alert(`Navigated to: ${document.location.href}, State: ${JSON.stringify(event.state)}`);
+        };
+
+        // Initialize display on page load
+        updateDisplay();
+    </script>
+</body>
+</html>
