@@ -7,41 +7,55 @@
 </head>
 <body>
 
+    <h1>Navigator Object Information</h1>
+    <p><strong>Online Status:</strong> <span id="onlineStatus"></span></p>
+    <p><strong>User Agent:</strong> <span id="userAgent"></span></p>
+    <p><strong>Browser Language:</strong> <span id="browserLanguage"></span></p>
+    <p><strong>Cookies Enabled:</strong> <span id="cookiesEnabled"></span></p>
+    <p><strong>Geolocation:</strong> <span id="geoLocation"></span></p>
+
     <script>
         // Display online status
-        document.write("<p><strong>Online Status:</strong> " + (navigator.onLine ? "Online" : "Offline") + "</p>");
+        document.getElementById("onlineStatus").textContent = navigator.onLine ? "Online" : "Offline";
+        console.log("Online status:", navigator.onLine);
 
         // Display user agent
-        document.write("<p><strong>User Agent:</strong> " + navigator.userAgent + "</p>");
+        document.getElementById("userAgent").textContent = navigator.userAgent;
+        console.log("User Agent:", navigator.userAgent);
 
         // Display browser language
-        document.write("<p><strong>Browser Language:</strong> " + navigator.language + "</p>");
+        document.getElementById("browserLanguage").textContent = navigator.language;
+        console.log("Browser Language:", navigator.language);
 
         // Display cookies enabled status
-        document.write("<p><strong>Cookies Enabled:</strong> " + (navigator.cookieEnabled ? "Yes" : "No") + "</p>");
+        document.getElementById("cookiesEnabled").textContent = navigator.cookieEnabled ? "Yes" : "No";
+        console.log("Cookies Enabled:", navigator.cookieEnabled);
 
         // Check and display geolocation capability
         if ("geolocation" in navigator) {
             navigator.geolocation.getCurrentPosition(
                 (position) => {
                     const { latitude, longitude } = position.coords;
-                    document.write("<p><strong>Latitude:</strong> " + latitude + "</p>");
-                    document.write("<p><strong>Longitude:</strong> " + longitude + "</p>");
+                    document.getElementById("geoLocation").textContent = `Latitude: ${latitude}, Longitude: ${longitude}`;
+                    console.log("Latitude:", latitude);
+                    console.log("Longitude:", longitude);
                 },
                 (error) => {
-                    document.write("<p><strong>Geolocation:</strong> Permission denied.</p>");
+                    document.getElementById("geoLocation").textContent = "Geolocation permission denied.";
+                    console.error("Geolocation error:", error);
                 }
             );
         } else {
-            document.write("<p><strong>Geolocation:</strong> Not supported by this browser.</p>");
+            document.getElementById("geoLocation").textContent = "Geolocation not supported.";
+            console.log("Geolocation is not supported by this browser.");
         }
 
-        // Check for vibration support
+        // Example of vibration function (only works on some devices)
         if (navigator.vibrate) {
             navigator.vibrate([200, 100, 200]); // Vibrate pattern: vibrate 200ms, pause 100ms, vibrate 200ms
-            document.write("<p><strong>Vibration:</strong> Triggered</p>");
+            console.log("Vibration triggered.");
         } else {
-            document.write("<p><strong>Vibration:</strong> Not supported by this browser.</p>");
+            console.log("Vibration not supported by this browser.");
         }
     </script>
 
