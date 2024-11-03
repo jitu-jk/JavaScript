@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // Check if the browser is online
+document.write("Online status:", navigator.onLine); // true or false
+
+// Get the browser's user agent string
+document.write("User Agent:", navigator.userAgent);
+
+// Detect the language of the browser
+document.write("Browser Language:", navigator.language);
+
+// Check if cookies are enabled in the browser
+document.write("Cookies Enabled:", navigator.cookieEnabled); // true or false
+
+// Check if the browser has geolocation capability
+if ("geolocation" in navigator) {
+    navigator.geolocation.getCurrentPosition((position) => {
+        document.write("Latitude:", position.coords.latitude);
+        document.write("Longitude:", position.coords.longitude);
+    });
+} else {
+    document.write("Geolocation is not supported by this browser.");
+}
+
+// Example of checking for specific hardware capabilities (like a vibration function for mobile devices)
+if (navigator.vibrate) {
+    navigator.vibrate([200, 100, 200]); // Vibrate pattern: vibrate 200ms, pause 100ms, vibrate 200ms
+}
+</script>
+
+</body>
+</html>
