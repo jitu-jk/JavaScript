@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screen Object Example</title>
+</head>
+<body>
+
+  <h2>Screen Information</h2>
+  <div id="screen-info">
+    <p id="width"></p>
+    <p id="height"></p>
+    <p id="availWidth"></p>
+    <p id="availHeight"></p>
+    <p id="colorDepth"></p>
+    <p id="pixelDepth"></p>
+    <p id="orientationType"></p>
+    <p id="orientationAngle"></p>
+  </div>
+
+  <script>
+    function displayScreenInfo() {
+      document.getElementById("width").innerText = "Screen width: " + screen.width + " px";
+   //   document.getElementById("height").innerText = "Screen height: " + screen.height + " px";
+   //   document.getElementById("availWidth").innerText = "Available width: " + screen.availWidth + " px";
+   //   document.getElementById("availHeight").innerText = "Available height: " + screen.availHeight + " px";
+   //   document.getElementById("colorDepth").innerText = "Color depth: " + screen.colorDepth + " bits";
+   //   document.getElementById("pixelDepth").innerText = "Pixel depth: " + screen.pixelDepth + " bits";
+   //   document.getElementById("orientationType").innerText = "Orientation type: " + screen.orientation.type;
+   //   document.getElementById("orientationAngle").innerText = "Orientation angle: " + screen.orientation.angle + "°";
+    }
+
+    // Call the function to display screen information on page load
+    displayScreenInfo();
+  </script>
+
+</body>
+</html>
