@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document_object</title>
+    <script>
+        function printvalue() {
+            var name = document.form1.name.value;
+            alert("window:" + name);
+
+        }
+    </script>
+</head>
+
+<body>
+   
+    <form name="form1">
+        enter name:<input type="text" name="name" />
+        <input type="button" onclick="printvalue()" value="input name" />
+    </form>
+</body>
+
+</html>
