@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document.getelementbytagname</title>
+</head>
+<body>
+    <script>
+        function counth2(){
+            var totalh2=document.getElementsByTagName("h2");
+            alert("total h2 tags are" + totalh2.length);
+        }
+        function counth3(){
+            var totalh3=document.getElementsByTagName("h3");
+            alert("total h3 tags are" + totalh3.length);
+        }
+    </script>
+    <h2>this is h2 content1</h2>
+    <h3>this is h3 content1</h3>
+    <h2>this is h2 content 2</h2>
+    <h3>this is h3 content2</h3>
+    <h3>this is thirs h3 content</h3>
+    <button onclick="counth2()">count_h2</button>
+    <input type="button" onclick="counth3()" value="count_h3"/>
+</body>
+</html>
