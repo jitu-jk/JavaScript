@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+</head>
+<body>
+    <form name="myform">
+        <label for="email">Enter your email:</label>
+        <input type="text" name="email" id="email" placeholder="example@domain.com" required>
+        <button type="button" onclick="validateemail()">Submit</button>
+    </form>
+    <p id="message"></p>
+
+    <script>
+        function validateemail() {
+            var x = document.myform.email.value;
+
+            // Find positions of '@' and '.'
+            var atposition = x.indexOf("@");
+            var dotposition = x.lastIndexOf(".");
+
+            // Message element
+            var message = document.getElementById("message");
+
+            // Validate email structure
+            if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= x.length) {
+                message.textContent = "Invalid email address!";
+                message.style.color = "red";
+            } else {
+                message.textContent = "Valid email address!";
+                message.style.color = "green";
+            }
+        }
+    </script>
+</body>
+</html>
