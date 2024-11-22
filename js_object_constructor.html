@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js_object_constructor</title>
+</head>
+<body>
+    <script>
+        function emp(id, name, salary) {
+            this.id = id;
+            this.name = name;
+            this.salary = salary;
+        }
+
+        // Create an employee object outside of the constructor
+         e = new emp(103, "Jitesh", 3000);
+
+        // Display the object properties
+        document.write(e.id + " " + e.name + " " + e.salary);
+    </script>
+</body>
+</html>
