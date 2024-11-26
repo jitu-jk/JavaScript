@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype_object</title>
+</head>
+<body>
+    <script>
+        // Define an Employee function to create employees with first and last names
+        function Employee(firstName, lastName) {
+          this.firstName = firstName;
+          this.lastName = lastName;
+        }
+      
+        // Add a method to get the full name of an employee
+        Employee.prototype.getFullName = function() {
+          return this.firstName + " " + this.lastName;
+        };
+      
+        // Create two employee objects
+        var employee1 = new Employee("Martin", "Roy");
+        var employee2 = new Employee("Duke", "William");
+      
+        // Display the full names
+        document.writeln(employee1.getFullName() + "<br>");
+        document.writeln(employee2.getFullName());
+      </script>
+      
+</body>
+</html>
