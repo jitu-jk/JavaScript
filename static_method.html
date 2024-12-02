@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person {  
+            constructor(name, email) {  
+                this.name = name;  
+                this.email = email;  
+            }  
+            print() {  
+                document.write(this.name, " ", this.email);  
+            }  
+            static create(str) {  
+                let person = JSON.parse(str);  
+                return new Person(person.name, person.email);  
+            }  
+        }  
+        
+        let str = '{"name": "Rohit", "email": "rohitjtp1@gmail.com"}';  
+        
+        let p1 = Person.create(str);  
+       
+        p1.print(); // Call the print method to display name and email
+    </script>
+</body>
+</html>
