@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+     
+// Define a function called `calculateArea` that takes an object with a `width` and `height` property, and returns the area of the rectangle.  
+function calculateArea(rectangle) {  
+  return rectangle.width * rectangle.height;  
+}  
+// Define an object called `rectangle1` with a `width` of 5 and a `height` of 10.  
+const rectangle1 = {  
+  width: 3,  
+  height: 10  
+};  
+// Define an object called `rectangle2` with a `width` of 10 and a `height` of 20.  
+const rectangle2 = {  
+  width: 10,  
+  height: 20  
+};  
+// Call the `calculateArea` function with the `rectangle1` object as an argument.  
+const area1 = calculateArea(rectangle1);  
+// Call the `calculateArea` function with the `rectangle2` object as an argument.  
+const area2 = calculateArea(rectangle2);  
+// Print the areas to the console.  
+document.write(`Area of rectangle1: ${area1}`);   
+document.write(`Area of rectangle2: ${area2}`);   
+
+    </script>
+</body>
+</html>
